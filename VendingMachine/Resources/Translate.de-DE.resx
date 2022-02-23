@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!--
+    Microsoft ResX Schema
+
+    Version 2.0
+
+    The primary goals of this format is to allow a simple XML format
+    that is mostly human readable. The generation and parsing of the
+    various data types are done through the TypeConverter classes
+    associated with the data types.
+
+    Example:
+
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+
+    There are any number of "resheader" rows that contain simple
+    name/value pairs.
+
+    Each data row contains a name, and value. The row also contains a
+    type or mimetype. Type corresponds to a .NET class that support
+    text/value conversion through the TypeConverter architecture.
+    Classes that don't support this are serialized and stored with the
+    mimetype set.
+
+    The mimetype is used for serialized objects, and tells the
+    ResXResourceReader how to depersist the object. This is currently not
+    extensible. For a given mimetype the value must be set accordingly:
+
+    Note - application/x-microsoft.net.object.binary.base64 is the format
+    that the ResXResourceWriter will generate, however the reader can
+    read any of the formats listed below.
+
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace"/>
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0"/>
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string"/>
+              <xsd:attribute name="type" type="xsd:string"/>
+              <xsd:attribute name="mimetype" type="xsd:string"/>
+              <xsd:attribute ref="xml:space"/>
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string"/>
+              <xsd:attribute name="name" type="xsd:string"/>
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2"/>
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1"/>
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3"/>
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4"/>
+              <xsd:attribute ref="xml:space"/>
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required"/>
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Welcome" xml:space="preserve">
+    <value>Willkommen</value>
+    <comment/>
+  </data>
+  <data name="------LIST OF PRODUCTS------" xml:space="preserve">
+    <value>------PRODUKTLISTE------</value>
+    <comment/>
+  </data>
+  <data name="Items Left" xml:space="preserve">
+    <value>Artikel übrig</value>
+    <comment/>
+  </data>
+  <data name="SOLD OUT" xml:space="preserve">
+    <value>AUSVERKAUFT</value>
+    <comment/>
+  </data>
+  <data name="Enter 4 to Quit..." xml:space="preserve">
+    <value>Geben Sie 4 ein, um zu beenden...</value>
+    <comment/>
+  </data>
+  <data name="------YOU CAN TRY DIFFERENT PRODUCT------" xml:space="preserve">
+    <value>------ SIE KÖNNEN VERSCHIEDENE PRODUKTE PROBIEREN ------</value>
+    <comment/>
+  </data>
+  <data name="Thank you. Have a good day!!!" xml:space="preserve">
+    <value>Danke. Haben Sie einen guten Tag!!!</value>
+    <comment/>
+  </data>
+  <data name="Do you want to insert more?(Y/N)" xml:space="preserve">
+    <value>Möchten Sie mehr einfügen? (J/N)</value>
+    <comment/>
+  </data>
+  <data name="Please collect your balance:" xml:space="preserve">
+    <value>Bitte holen Sie Ihr Guthaben ab:</value>
+    <comment/>
+  </data>
+  <data name="INSERT COIN(Accepted coins" xml:space="preserve">
+    <value>MÜNZE EINWERFEN(Akzeptierte Münzen</value>
+    <comment/>
+  </data>
+  <data name="Please insert valid coin." xml:space="preserve">
+    <value>Bitte gültige Münze einwerfen.</value>
+    <comment/>
+  </data>
+  <data name="Collect your coin..." xml:space="preserve">
+    <value>Sammle deine Münze...</value>
+    <comment/>
+  </data>
+  <data name="Amount entered:" xml:space="preserve">
+    <value>Eingegebener Betrag:</value>
+    <comment/>
+  </data>
+  <data name="Selected Product" xml:space="preserve">
+    <value>Ausgewähltes Produkt</value>
+    <comment/>
+  </data>
+  <data name="Dispensing....." xml:space="preserve">
+    <value>Abgabe.....</value>
+    <comment/>
+  </data>
+  <data name="Insufficient balance" xml:space="preserve">
+    <value>Mangelhaftes Gleichgewicht</value>
+    <comment/>
+  </data>
+  <data name="Selected Product is SOLD OUT" xml:space="preserve">
+    <value>Das ausgewählte Produkt ist AUSVERKAUFT</value>
+    <comment/>
+  </data>
+  <data name="Do you want to select another product?(Y/N)" xml:space="preserve">
+    <value>Möchten Sie ein anderes Produkt auswählen?(J/N)</value>
+    <comment/>
+  </data>
+  <data name="Invalid input. Please select available Item from the menu" xml:space="preserve">
+    <value>Ungültige Eingabe. Bitte wählen Sie verfügbare Artikel aus dem Menü aus</value>
+    <comment/>
+  </data>
+  <data name="Welcome to Dennmayer Vending Machine" xml:space="preserve">
+    <value>Willkommen beim Dennmayer Automaten</value>
+    <comment/>
+  </data>
+  <data name="EXACT CHANGE ONLY" xml:space="preserve">
+    <value>NUR GENAUE ÄNDERUNG</value>
+    <comment/>
+  </data>
+</root>
