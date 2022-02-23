@@ -39,10 +39,13 @@ var languages = configuration.GetSection("Localization").GetChildren().AsEnumera
 Console.WriteLine("Please select the preferred language(EN | DE | FR)");
 Console.Write("LANGUAGE ");
 string? lang = Console.ReadLine();
+if(!string.IsNullOrEmpty(lang)){
+    lang = lang.ToUpper();
+}
 Console.WriteLine();
 
 Thread.CurrentThread.CurrentUICulture = CultureInfo.CreateSpecificCulture(languages.GetValueOrDefault(lang??"EN")??"en-US");
-// host.Services.GetRequiredService<ProductManager>().SeedProductsDataCSV(pathToCsv);
+// host.Services.GetRequiredService<ProductManager>().SeedProductsDataCSV(pathToCsv); //uncomment this line & line# 20, if need to seed product stock from attached CSV file
 
 //run vending machine
 host.Services.GetRequiredService<Machine>().Run();
