@@ -24,7 +24,7 @@ if(!string.IsNullOrEmpty(lang)){
 Console.WriteLine();
 
 Thread.CurrentThread.CurrentUICulture = CultureInfo.CreateSpecificCulture(languages.GetValueOrDefault(lang??"EN")??"en-US");
-// host.Services.GetRequiredService<IDataContext>().SeedProductsDataCSV("./Data/ProductStock.csv"); //uncomment this line & line# 20, if need to seed product stock from attached CSV file
+// host.Services.GetRequiredService<IDataContext>().SeedProductsDataCSV("./Data/ProductStock.csv"); //uncomment this line, if need to seed product stock from attached CSV file
 
 //run vending machine
 host.Services.GetRequiredService<IMachineManager>().Run();
