@@ -2,6 +2,7 @@ using VendingMachine.Models;
 using System.Resources;
 using Microsoft.Extensions.Logging;
 using VendingMachine.Services;
+using VendingMachine.Data;
 
 namespace VendingMachine.Repositories
 {
@@ -10,12 +11,15 @@ namespace VendingMachine.Repositories
     {
         private readonly string _currency = "C2";
         private readonly ITranslateService _translateService;
-        private readonly ILogger<IProductRepository> _logger;
-        public List<Product> Products { get; set; }
+        private readonly ILogger<ProductRepository> _logger;
+        private readonly IDataContext _context;
 
-        public ProductRepository(ITranslateService translateService, ILogger<ProductRepository> logger, params Product[] products)
+        public IEnumerable<Product> Products { get; set; }
+
+        public ProductRepository(ITranslateService translateService, IDataContext context, ILogger<ProductRepository> logger)
         {
-            Products = products.ToList();
+            _context = context;
+            Products = _context.Products.AsReadOnly();
             _translateService = translateService;
             _logger = logger;
         }
@@ -34,7 +38,7 @@ namespace VendingMachine.Repositories
             Console.WriteLine();
         }
 
-        public bool DisplayAvailableProductsByAmount(double amount)
+        public bool DisplayAvailableProductsByAmount(decimal amount)
         {
             Console.WriteLine(_translateService.Translate("------YOU CAN TRY DIFFERENT PRODUCT------"));
             Console.WriteLine();
@@ -55,34 +59,6 @@ namespace VendingMachine.Repositories
             if (prod != null)
             {
                 prod.Quantity--;
-            }
-        }
-
-        public void SeedProductsDataCSV(string path)
-        {
-            Dictionary<int, int> csvData = new Dictionary<int, int>();
-            try
-            {
-                string[] lines = System.IO.File.ReadAllLines(path);
-                Product? prod;
-                for (var i = 1; i < lines.Length; i++) //assume 1st row contain no data but headers only & column[0] = ProdId, column[1]=Stock
-                {
-                    string[] columns = lines[i].Split(',');
-                    csvData.Add(int.Parse(columns[0]), int.Parse(columns[1]));
-                }
-                foreach (var item in csvData)
-                {
-                    prod = Products.Where(prod => prod.Id == item.Key).FirstOrDefault();
-                    if (prod != null)
-                    {
-                        prod.Quantity += item.Value;
-                    }
-                }
-            }
-            catch (Exception)
-            {
-
-                throw;
             }
         }
     }

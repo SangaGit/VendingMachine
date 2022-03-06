@@ -2,8 +2,8 @@ namespace VendingMachine
 {
     public interface IMachineManager
     {
-        public double DepositCoin(double amount);
-        public bool IsAcceptableCoin(double amount);
+        public decimal DepositCoin(decimal amount);
+        public bool IsAcceptableCoin(decimal amount);
         public void Run();
     }
 }

@@ -4,11 +4,10 @@ namespace VendingMachine.Repositories
 {
     public interface IProductRepository
     {
-        public List<Product> Products { get; set; }
+        public IEnumerable<Product> Products { get; set; }
 
-        public bool DisplayAvailableProductsByAmount(double amount);
+        public bool DisplayAvailableProductsByAmount(decimal amount);
         public void DisplayProducts();
         public void ReduceProductQuantity(Product product);
-        public void SeedProductsDataCSV(string path);
     }
 }
