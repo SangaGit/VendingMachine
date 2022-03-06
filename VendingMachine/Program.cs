@@ -11,6 +11,9 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Configuration;
 using System.Linq;
+using VendingMachine.Repositories;
+using VendingMachine.Factories;
+using VendingMachine.Services;
 
 var host = CreateHostBuilder(args).Build();
 
@@ -48,23 +51,22 @@ Thread.CurrentThread.CurrentUICulture = CultureInfo.CreateSpecificCulture(langua
 // host.Services.GetRequiredService<ProductManager>().SeedProductsDataCSV(pathToCsv); //uncomment this line & line# 20, if need to seed product stock from attached CSV file
 
 //run vending machine
-host.Services.GetRequiredService<Machine>().Run();
+host.Services.GetRequiredService<IMachineManager>().Run();
 
 static IHostBuilder CreateHostBuilder(string[] args){
     return Host.CreateDefaultBuilder(args)
             .ConfigureServices((context, services)=>{
                 services.AddLogging(fs => fs.AddConsole());
-                services.AddTransient<Machine>();
-                services.AddSingleton<ProductManager>(x => {
-                    return new ProductManager(
-                        x.GetRequiredService<ResourceManager>(),
-                        x.GetRequiredService<ILogger<ProductManager>>(),
+                services.AddTransient<IMachineManager,MachineManager>();
+                services.AddSingleton<IProductRepository,ProductRepository>(x => {
+                    return new ProductRepository(
+                        x.GetRequiredService<ITranslateService>(),
+                        x.GetRequiredService<ILogger<ProductRepository>>(),
                         new Product(){Id = 1, Name = "COLA", UnitPrice = 1.00, Quantity = 10},
                         new Product(){Id = 2, Name = "Chips", UnitPrice = 0.50, Quantity = 12},
                         new Product(){Id = 3, Name = "Candy", UnitPrice = 0.65, Quantity = 0});
                 });
-                services.AddTransient<ResourceManager>( x => {
-                    return new ResourceManager("VendingMachine.Resources.Translate", Assembly.GetExecutingAssembly());
-                });
+                services.AddSingleton<IResourceManagerFactory,ResourceManagerFactory>();
+                services.AddSingleton<ITranslateService,TranslateService>();
             });
 }
